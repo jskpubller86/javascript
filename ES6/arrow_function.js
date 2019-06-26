@@ -1,0 +1,56 @@
+/**
+ * es6 에서는 화살표 함수가 추가되었다. 기존의 function(){}도 그대로 사용할 수 있다.
+ * 화살표 함수는  => 로 표현한다.  다음은 화살표 함수 예제인다.
+ */
+
+ // 기존  ES5문법
+ function add1(x,y) {
+     return x + y;
+ }
+
+
+// ES6 문법
+const add2 = (x,y) => {return x +y;};
+const add3 = (x, y) => x + y; // 바로 리턴 가능
+const add4 = (x, y) => (x + y); // 소괄호 사용가능
+
+
+
+/* 매개 변수가 한 개면 괄호를 사용안해도 됨 */
+
+// 기존  ES5문법
+function not1(x) {
+        return !x;
+}
+
+// ES6 문법
+const not2 = x => !x;
+
+
+
+/* 화살표 함수는 this 바인딩 방식이 바뀌었다. 상위 스코프의 this를 그대로 사용할 수 있다. */
+// 기존 ES5
+var relationship1 = {
+        name: 'zero',
+        friends: ['nero','hero','xero'],
+        logFriends: function () {
+            var that = this; // relationship1을 가리키는 this를 that에 저장
+            this.friends.forEach(function (friend) {
+                console.log(that.anme, friend);
+            });
+        },
+    };
+relationship1.logFriends();
+
+
+// ES6
+const relationship2 = {
+        name: 'zero',
+        friends: ['nero','hero','xero'],
+        logFriends(){
+            this.friends.forEach(friend => {
+                console.log(this.name, friend);// friends의 원소가 아닌 상위 this를 참조한다.
+            });
+        },
+    };
+relationship2.logFriends();

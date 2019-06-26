@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+        /*
+            피제수를 제수로 나눈 나머지를 구한다.
+            피제수가 0이면 나머지가 0이 된다.
+            제수가 0이면 NaN이다.
+            피제수가 문자이면 0이 된다.
+        */
+        document.write("문자 10 % 숫자 10 = ");
+        document.write("10" % 10); // 0 출력
+        document.write("<br><br>");
+
+        document.write("숫자 10 % 숫자 20 = ");
+        document.write(10 % 20); //  10 출력
+        document.write("<br><br>");
+
+        document.write("숫자 0 % 숫자 0 = ");
+        document.write(0 % 0); // NaN 출력
+        document.write("<br><br>");
+
+        document.write("숫자 0 % 숫자 1 = ");
+        document.write(0 % 1); // 0 출력
+        document.write("<br><br>");
+
+        document.write("숫자 10 % 숫자 0 = ");
+        document.write(10 % 0); // NaN 출력
+        document.write("<br><br>");
+
+        document.write("true % true = ");
+        document.write(true % true); //true 는 숫자 1로 표현되기 때문에 1+1 연산이 되어 2가 출력
+        document.write("<br><br>");
+
+        document.write("false % false = ");
+        document.write(false % false); // false가 0이므로 0 % 0이므로 NaN
+        document.write("<br><br>");
+
+        document.write("false % null = ");
+        document.write(false % null); // null이 0이므로 NaN이 출력된다.
+        document.write("<br><br>");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
