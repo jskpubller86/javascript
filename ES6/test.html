@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+            <script type="text/javascript">
+
+                var num = parseInt( prompt("숫자를 입력해 주세요.") );
+
+                if ( (num%2) == 0) {
+
+                    for (var i = 0; i < num; i++) {
+
+                        for (var j = 0; j < i; j++) {
+                            document.write('*');
+                        }
+                        document.write('<br>');
+                    }
+                } else if(num < 21) {
+                    for (var i = 1; i <= num; i+=2) {
+                        if(num != i){
+                            for( var k = (num - i)/2; k > 0; k-- ){
+                                document.write('.');
+                            }
+                        }
+                        for (var j = 1; j <= i; j++) {
+                            document.write('*');
+                        }
+                        document.write('<br>');
+                    }
+                }
+            </script>
+
+    </body>
+</html>

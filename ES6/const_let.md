@@ -1,9 +1,11 @@
-/**
- * es6 에서는  var가 사라지고 const와 let이 생겼다.
- * var는 함수 스코프를 가지지만 cont와 let은 블록스코프를 가진다.
- */
+# const와 let
+
+es6 에서는  var가 사라지고 const와 let이 생겼다.
+
+var는 함수 스코프를 가지지만 cont와 let은 블록스코프를 가진다.
+*/
 if (true) {
-    var x = 3;
+var x = 3;
 }
  console.log(x);
 
