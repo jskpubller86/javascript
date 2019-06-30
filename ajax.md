@@ -92,6 +92,31 @@ formData = new FormData(myForm);
 xhr.send(formData);
 ~~~
 
+## encodeURIComponent, decodeURIComponent
+
+ajax 요청을 보낼 때 주소에 한글이 들어가는 서버가 한그 주소를 이해하지 못하는 경우가 있다. 이럴 때는 
+
+Window 객의 메서드인 encodeURIComponent 메서드를 사용한다.
+
+~~~javascript
+var xhr = new XMLHttpRequest();
+xhr.onload = function(){
+  if (xhr.status === 200 || xhr.status === 201) {
+    console.log(xhr.responseText);
+  }
+};
+xhr.onerror = function () {
+  console.error(xhr.responseText);
+};
+xhr.open('GET', 'https://www.zerocho.com/api/search/' + encodeURIComponent('노드') ); // '노드' 문자를 인코딩
+xhr.send(); // 요청 전송
+~~~
+
+~~~javascript
+console.log(encodeURIComponent('노드')); // 노드
+console.log(decodeURIComponent('%EB%85%B8%EB%93%9C')); // 노드
+~~~
+
 
 
 # CORS
