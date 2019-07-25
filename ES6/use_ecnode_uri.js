@@ -1,3 +1,4 @@
+# encodeURIComponent로 한글 인코딩 하기 
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function () { // 요청에 대한 콜백
