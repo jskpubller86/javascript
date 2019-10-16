@@ -1,4 +1,4 @@
-# const와 let
+# 1. const와 let
 
 es6 에서는  var가 사라지고 const와 let이 생겼다.
 
