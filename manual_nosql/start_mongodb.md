@@ -311,7 +311,9 @@ capped는 로그 데이터 유형에 적합하다.
 	"sleepCount" : 0,
 	.....
 }
+> db.things.stats().capped // capped 상태만 확인
 ~~~
+
 ## 9.2. collection 이름 변경
 
 ~~~
@@ -433,3 +435,41 @@ WriteResult({ "nInserted" : 1 })
 { "_id" : ObjectId("5dd69ebe3a45f5907af0e2b2"), "n" : 1119, "m" : "test" }
 { "_id" : ObjectId("5dd69ebe3a45f5907af0e2b3"), "n" : 1120, "m" : "test" }s
 ~~~
+
+결과가 20 개가 넘을 때는 it 명령어로 skip할 수 있다. 
+
+~~~
+> it // 만약 더 보여줄 도큐먼트가 없다면 커서가 없음을 표시한다. 
+# 결과 
+no cursor
+~~~
+
+# 11. 데이터 업데이트 
+데이터를 업데이트하는 방법에는 SAVE와 UPDATE 메소드가 있다. 
+
+~~~
+> db.things.update({n:1103}, {$set: {ename: "standford", dept :  "research"}})
+# 결과
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+~~~
+
+# 12. 데이터 삭제
+조건을 오브젝트 형식으로 전달하여 삭제한다. 
+
+~~~
+> db.things.remove({m: "test"})
+# 결과
+WriteResult({ "nRemoved" : 18 })
+~~~
+
+조건을 미지정시 모든 데이터를 삭제한다.
+
+~~~
+> db.things.remove({})
+# 결과
+WriteResult({ "nRemoved" : 7 })
+> db.things.find()
+~~~
+
+
+
